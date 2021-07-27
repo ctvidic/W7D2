@@ -1,0 +1,11 @@
+ <ul>
+    <li>Username: <%= user.username %></li>
+    <li>Age: <%= user.age %></li>
+    <li>
+        <% if action == "show" %>
+            <a href="<%=users_url%>">Back to index</a>
+        <% else %>
+            <a href="<%=user_url(user)%>">Go to show page</a>
+        <% end %>
+    </li>
+</ul>

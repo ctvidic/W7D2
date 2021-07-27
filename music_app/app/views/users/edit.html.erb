@@ -1,0 +1,8 @@
+<form action="<%=user_url(@user)%>" method="POST">
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="PATCH">
+      <label>Email: 
+        <input type="text" name="user[email]" value="<%=@user.email%>">
+    </label> 
+    <button>Edit User!!</button>
+</form>

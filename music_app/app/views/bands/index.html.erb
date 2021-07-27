@@ -1,0 +1,17 @@
+<html>
+<h1>Bands [id,name]</h1>
+<ul>
+    <% @bands.each do |band| %>
+     <li><%= band.id  %>, <%= band.name  %>
+    </li>
+    <% end %>
+</ul>
+<br>
+<br>
+<form action="<%=bands_url%>" method="POST">
+    <%= auth_token %>
+    <input type="text" name="band[name]">
+    <button>Add Band: </button>
+</form>
+
+</html>

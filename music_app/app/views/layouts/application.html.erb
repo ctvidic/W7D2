@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Music  App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  </div>
+  <body>
+    <div class = "inside">
+    <div class = "header">
+    spobify
+    </div>
+
+
+    <%= yield %>
+    <% if logged_in? %>
+      <h2> Welcome! <%= current_user.email %></h2>
+     
+      <form action="<%= session_url %>" method='post'>
+        <%= auth_token %>
+        <input name="_method" type="hidden" value="delete">
+        <input type="submit" value="Logout!">
+      </form>
+      
+    <% else %>
+      <a href="<%= new_user_url %>"> Sign Up !</a>
+      <a href="<%= new_session_url %>"> Sign In !</a>
+    <% end %>
+    </div>
+  </body>
+</html>
